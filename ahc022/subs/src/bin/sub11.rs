@@ -1,11 +1,10 @@
 #![allow(non_snake_case)]
 
-use itertools::Itertools;
 #[cfg_attr(cargo_equip, cargo_equip::equip)]
 use ::subs::{get_input, judge::Judge, temperature_field::TemperatureField};
 
 /// パターンの1辺
-const PATTERN_LEN: usize = 3;
+const PATTERN_LEN: usize = 5;
 const HALF: isize = (PATTERN_LEN / 2) as isize;
 const FILL: usize = 500;
 
@@ -69,19 +68,15 @@ impl Solver {
             }
         }
 
-        // 5x5ガウシアンフィルタで平滑化
-        self.temperature.smoothing5x5();
+        if self.S < 100 {
+            // 5x5ガウシアンフィルタで平滑化
+            self.temperature.smoothing5x5();
+        }
     }
 
     /// 複数回計測し、中央値を取る
     fn measure_acculate(&self, i: usize, r: isize, c: isize) -> usize {
-        if self.S < 100 {
-            Judge::measure(i, r, c)
-        } else if self.S < 400 {
-            (0..5).map(|_| Judge::measure(i, r, c)).sorted().nth(2).unwrap()
-        } else {
-            (0..7).map(|_| Judge::measure(i, r, c)).sorted().nth(3).unwrap()
-        }
+        Judge::measure(i, r, c)
     }
 
     /// i番目の出口の座標を特定する
