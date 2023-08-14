@@ -51,25 +51,25 @@ impl Solver {
     fn get_3x5_pattern(&self, i: usize) -> usize {
         let pattern = vec![
             vec![
-                Judge::measure(i, -2, -1),
+                Judge::measure(i, -1, -2),
                 Judge::measure(i, -1, -1),
-                Judge::measure(i, 0, -1),
-                Judge::measure(i, 1, -1),
-                Judge::measure(i, 2, -1),
-            ],
-            vec![
-                Judge::measure(i, -2, 0),
                 Judge::measure(i, -1, 0),
-                Judge::measure(i, 0, 0),
-                Judge::measure(i, 1, 0),
-                Judge::measure(i, 2, 0),
+                Judge::measure(i, -1, 1),
+                Judge::measure(i, -1, 2),
             ],
             vec![
-                Judge::measure(i, -2, 1),
-                Judge::measure(i, -1, 1),
+                Judge::measure(i, 0, -2),
+                Judge::measure(i, 0, -1),
+                Judge::measure(i, 0, 0),
                 Judge::measure(i, 0, 1),
+                Judge::measure(i, 0, 2),
+            ],
+            vec![
+                Judge::measure(i, 1, -2),
+                Judge::measure(i, 1, -1),
+                Judge::measure(i, 1, 0),
                 Judge::measure(i, 1, 1),
-                Judge::measure(i, 2, 1),
+                Judge::measure(i, 1, 2),
             ],
         ];
         // 最も近いパターンを特定

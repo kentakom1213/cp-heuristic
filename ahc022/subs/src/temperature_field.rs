@@ -9,7 +9,7 @@ use crate::{chmin, consts::*, gaussian_filter::GaussianFilter, usize_tools::Usiz
 #[derive(Debug)]
 pub struct TemperatureField {
     L: usize, // 1辺
-    landing_pos: Vec<Pos>,
+    pub landing_pos: Vec<Pos>,
     pub field: Vec<Vec<usize>>, // フィールド
 }
 

@@ -15,13 +15,13 @@ impl Judge {
     }
 
     /// 温度を計測する
-    pub fn measure(i: usize, y: isize, x: isize) -> usize {
-        println!("{} {} {}", i, x, y);
+    pub fn measure(i: usize, r: isize, c: isize) -> usize {
+        println!("{} {} {}", i, r, c);
         let v = get_input!(isize);
         if v >= 0 {
             v as usize
         } else {
-            println!("something went wrong. i={} y={} x={}", i, x, y);
+            println!("something went wrong. i={} r={} c={}", i, r, c);
             std::process::exit(1);
         }
     }
