@@ -21,6 +21,3 @@ Cargo.lock
 tools/
 in/
 out/
-
-# コンテスト期間中のみ
-ahc022/
