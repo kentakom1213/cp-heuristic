@@ -15,7 +15,7 @@ BINARY_DIR = BASE / "subs/target/release"
 RESULT_FILE = BASE / "results"
 
 THREAD_NUM = 10  # 並列実行を行うスレッドの数
-TEST_NUM = 100  # 実行するテストケースの数
+TEST_NUM = 200  # 実行するテストケースの数
 
 # データフレームのカラム名
 DATAFRAME_COLS = [
